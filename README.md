@@ -2,6 +2,9 @@
 Yandex Lyceum Python course PyGame project.
 
 
+## Resources
+- [Kenny Game assets](https://www.kenney.nl/assets)
+- [Itch.io Game assets](https://itch.io/)
 ## Как будут оцениваться ваши проекты
 
 ### Общие сведения
