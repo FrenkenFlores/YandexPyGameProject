@@ -1,3 +1,4 @@
+import os
 import sys
 import pygame
 import random
@@ -28,13 +29,21 @@ def update_background():
         )
 
 
+def earth_animation():
+    while True:
+        for _, _, files in os.walk('graphics/earth'):
+            for frame in files:
+                yield pygame.image.load(f"graphics/earth/{frame}").convert_alpha()
+
+
 def main():
     random.seed = 1
     clock = pygame.time.Clock()
     tmp_time = time.time()
     # Create a regular surface.
     update_background()
-    earth_surface = pygame.image.load("graphics/earth.png").convert_alpha()
+    earth_surfaces = earth_animation()
+    earth_surface = next(earth_surfaces)
     title_text = pygame.font.Font("fonts/Pixeltype.ttf", 50)
     title_text_surface = title_text.render('E-Defender', False, (255, 255, 255))
 
@@ -49,6 +58,7 @@ def main():
             # Save time.
             tmp_time = time.time()
             update_background()
+            earth_surface = next(earth_surfaces)
         # BLIT - Block Image Transfer - put one surface on another surface.
         screen.blit(earth_surface, (
             (WIDTH - earth_surface.get_width()) / 2, (HEIGHT - earth_surface.get_height()) / 2)
