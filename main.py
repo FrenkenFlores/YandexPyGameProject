@@ -10,10 +10,10 @@ HEIGHT = 600
 
 def update_background():
     space_surface = pygame.Surface((WIDTH, HEIGHT))
-    space_surface.fill(color=(0, 0, 0))
-    stars_surface = [pygame.image.load("graphics/star_0.png").convert()] * 10 + [
-        pygame.image.load("graphics/star_1.png").convert(),
-        pygame.image.load("graphics/star_2.png").convert()
+    space_surface.fill(color=(25, 15, 35))
+    stars_surface = [pygame.image.load("graphics/star_0.png").convert_alpha()] * 10 + [
+        pygame.image.load("graphics/star_1.png").convert_alpha(),
+        pygame.image.load("graphics/star_2.png").convert_alpha()
     ]
     stars_number = 30
     stars_density = 1
@@ -34,7 +34,7 @@ def main():
     tmp_time = time.time()
     # Create a regular surface.
     update_background()
-    earth_surface = pygame.image.load("graphics/earth.png").convert()
+    earth_surface = pygame.image.load("graphics/earth.png").convert_alpha()
     title_text = pygame.font.Font("fonts/Pixeltype.ttf", 50)
     title_text_surface = title_text.render('E-Defender', False, (255, 255, 255))
 
