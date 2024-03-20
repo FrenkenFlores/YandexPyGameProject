@@ -1,6 +1,8 @@
 # YandexPyGameProject
 Yandex Lyceum Python course PyGame project.
 
+## Showcase
+![gif](showcase.gif)
 
 ## Resources
 - [Kenny Game assets](https://www.kenney.nl/assets)
